@@ -2,15 +2,61 @@
  */
 
 
+body {
+	background: url(starry-sky-above-the-mountains-15641.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+}
+
+
+#title {
+	font-family: Helvetica;
+	font-weight: 100;
+	font-size: 36pt;
+	color: white;
+}
+
+
+#rules {
+	/* Shamelessly stolen from Apple (research kit page) */
+	font-family: 'Myriad Set Pro' 'Helvetica';
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	color: white;
+	font-size: 13pt;
+	font-weight: 90;
+
+	word-wrap: break-all;
+	white-space: normal;
+	text-align: justify;
+}
+
 
 .board {
+	margin: auto;
+	width: 85%;
+}
+
+
+.board table {
 	margin: auto;
 }
 
 
-.row td {
-	margin: 12pt;
-	width: 120pt;
-	height: 120pt;
+.subgrid tr td {
+	margin: 24pt;
+	width: 50pt;
+	height: 50pt;
 	background: yellow;
+
+	/*vertical-align: middle;*/
+	text-align: center;
+	padding: 0pt;
+	font-family: 'Helvetica';
+	font-size: 34pt;
+
+}
+
+
+.subgrid {
+	margin: 26pt;
 }

@@ -8,6 +8,7 @@
 	<head>
 		<meta charset='UTF-8'>
 		<meta name='author' content='Jonatan H Sundqvist'>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> 
 		<script rel='text/javascript' src='sudoku.js'></script>
 		<link rel='stylesheet' href='sudoku.css'>
 		<title>CSS Sudoku</title>
@@ -16,6 +17,74 @@
 	<body>
 		<div class='board'>
 			<table id='grid'>
+				<thead>
+					<th id='title' colspan='3'><h1>SUDOKU</h1></th>
+				</thead>
+
+				<tbody>
+				<tr class='row'>
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+
+				</tr>
+
 				<tr class='row'>
 					<td>
 						<table class='subgrid'>
@@ -78,6 +147,83 @@
 					</td>
 					
 				</tr>
+
+				<tr class='row'>
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+
+					<td>
+						<table class='subgrid'>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</td>
+					
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td colspan='3'>
+					<!-- TODO: Fix the line wrap -->
+						<div id='rules'>
+							The aim is to fill in the grid with digits one through nine without using any digit more<br>than once
+							in a single row, column or sub grid.
+						</div>
+					</td>
+				</tr>
+			</tfoot>
+
 			</table>
 		</div>
 	</body>
