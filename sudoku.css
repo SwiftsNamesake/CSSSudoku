@@ -47,6 +47,8 @@ body {
 	width: 50pt;
 	height: 50pt;
 	background: yellow;
+	
+	padding: 0pt;
 
 	/*vertical-align: middle;*/
 	text-align: center;
@@ -54,9 +56,31 @@ body {
 	font-family: 'Helvetica';
 	font-size: 34pt;
 
+	-webkit-transition: background-color 0.4s;
+	-webkit-transition: border-radius 0.4s;
+
+}
+
+
+.subgrid tr td:hover {
+	background-color: #5AAD7B;
+	border-radius: 100%;
+	-webkit-transition: background-color 0.4s;
+	-webkit-transition: border-radius 0.4s;
 }
 
 
 .subgrid {
 	margin: 26pt;
+	padding: 0pt;
+}
+
+
+/*.subgrid:hover {
+	background-color: rgba(120, 250, 72, 0.3);
+}
+*/
+
+.selected {
+	/* TODO: Rename focused (?) */
 }
