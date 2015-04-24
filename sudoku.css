@@ -1,0 +1,16 @@
+/*
+ */
+
+
+
+.board {
+	margin: auto;
+}
+
+
+.row td {
+	margin: 12pt;
+	width: 120pt;
+	height: 120pt;
+	background: yellow;
+}
