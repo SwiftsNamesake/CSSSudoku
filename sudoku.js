@@ -16,7 +16,8 @@ function Sudoku() {
 		return;
 	}
 
-
+	// The board is stored as a list of columns (2D array)
+	// Zero indicates an empty tile.
 	this.board = [[0,0,0,0,0,0,0,0,0],
 	              [0,0,0,0,0,0,0,0,0],
 	              [0,0,0,0,0,0,0,0,0],
@@ -30,28 +31,34 @@ function Sudoku() {
 }
 
 
+// TODO: Refactor logic (extract common code - unique elements, zero filter, slices - possibly by extending Array)
+// TODO: Check arguments (?)
 Sudoku.prototype.validColumn = function(icol) {
-	filled = this.board[icol].filter(function(n) { return n != 0; }); // A list of all filled (non-zero) tiles in the column
-
+	return this.board[icol].filter(function(value, index, column) { return n != 0; })
+	                       .every(function(value, index, column) { return column.indexOf(value) === index; });
 }
 
 
 Sudoku.prototype.validRow = function(irow) {
-	return [0,1,2,3,4,5,6,7,8].every(function(icol) {
-
-	});
+	// No lazy transpositions in JavaScript, but this'll do (create the row array)
+	return [0,1,2,3,4,5,6,7,8].map(function(icol, index, indeces)  { return this.board[icol][irow]; })
+	                          .filter(function(value, index, row)  { return n != 0; })                        // 
+	                          .every(function(value, index, row)   { return row.indexOf(value) === index; }); // 
 }
 
 
 Sudoku.prototype.validSubgrid = function(icol, irow) {
-	var subgrid = [0,1,2,3,4,5,6,7,8].map(function(n) { return this.board[3*icol + (n%3)][3*irow + Math.floor(irow/3)]; });
-	return [0,1,2,3,4,5,6,7,8].every(function(n) { return subgrid.indexOf(n) ; });
+	// No lazy transpositions in JavaScript, but this'll do (create the subgrid array)
+	return [0,1,2,3,4,5,6,7,8].map(function(index, _, indeces)         { return this.board[3*icol + (index%3)][3*irow + Math.floor(index/3)]; })
+	                          .filter(function(value, index, subgrid)  { return n !== 0; })                           // Filter out empty tiles
+	                          .every(function(value, index, subgrid)   { return subgrid.indexOf(value) === index; }); // Make sure no tile value is duplicated
 }
 
 
 
 function validBoard(board) {
-	return [1,2,3,4,5,6,7,8].every(function(n) {
+	// TODO: More informative (fine-grained) outcome (eg. returning dict or array of error locations)
+	return [0,1,2,3,4,5,6,7,8].every(function(n) {
 		return sudoku.validRow(n) && sudoku.validColumn(n) && sudoku.validSubgrid(n%3, Math.floor(n/3));
 	});
 }

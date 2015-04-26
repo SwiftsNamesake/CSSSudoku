@@ -23,9 +23,34 @@ html, body {
 
 	padding: 0pt;
 	font-family: 'Helvetica';
-	font-size: 66pt;
-	color: white;
+	font-size: 83pt;
+	/*color: white;*/
 
-	/*width: 100%;*/
+	color: rgba(255, 255, 255, 0.0); /* Initial colour */
+	/* width: 100%; */
 	/*height: 100%;*/
+	-webkit-animation: fadeinout 16s 3;
+}
+
+
+@-webkit-keyframes fadeinout {
+	0%   { color: rgba(255, 255, 255, 0.0); }
+	45%  { color: rgba(255, 255, 255, 1.0); }
+	55%  { color: rgba(255, 255, 255, 1.0); }
+	95%  { color: rgba(255, 255, 255, 0.0); }
+	100% { color: rgba(255, 255, 255, 0.0); } /* TODO: Make the text stay after last iteration with animation direction set to alternate (?) */
+
+}
+
+
+.fadein {
+	color: rgba(255, 255, 255, 1.0);
+	-webkit-transition: color 4.3s;
+	-webkit-transition-timing-function: linear;
+}
+
+
+.fadeout {
+	color: rgba(255, 255, 255, 0.0);
+	-webkit-transition: color 2.2s;
 }

@@ -46,7 +46,7 @@ body {
 	margin: 24pt;
 	width: 50pt;
 	height: 50pt;
-	background: yellow;
+	background: rgb(25, 48, 95);
 	
 	padding: 0pt;
 
@@ -80,6 +80,7 @@ body {
 	background-color: rgba(120, 250, 72, 0.3);
 }
 */
+
 
 .selected {
 	/* TODO: Rename focused (?) */
